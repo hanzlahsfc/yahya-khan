@@ -72,3 +72,63 @@ if ('IntersectionObserver' in window && watched.length) {
 
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+// Pointer overlay. The dot snaps to the pointer. The ring trails it
+// and grows on links and buttons. Off for touch and reduced motion.
+(function () {
+  const fine = window.matchMedia('(pointer: fine)').matches;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!fine || reduced) return;
+
+  const dot = document.createElement('div');
+  dot.className = 'cursor';
+  const ring = document.createElement('div');
+  ring.className = 'cursor-ring';
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+
+  let mx = 0;
+  let my = 0;
+  let rx = 0;
+  let ry = 0;
+  let seen = false;
+
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    if (!seen) {
+      seen = true;
+      rx = mx;
+      ry = my;
+      document.documentElement.classList.add('has-cursor');
+    }
+    dot.style.transform = 'translate3d(' + mx + 'px,' + my + 'px,0)';
+  }, { passive: true });
+
+  document.documentElement.addEventListener('mouseleave', () => {
+    document.documentElement.classList.remove('has-cursor');
+    seen = false;
+  });
+
+  function loop() {
+    rx += (mx - rx) * 0.14;
+    ry += (my - ry) * 0.14;
+    ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  const hot = 'a, button, summary, [role="button"]';
+  function hotOf(node) {
+    if (!node || !node.closest) return null;
+    return node.closest(hot);
+  }
+  document.addEventListener('mouseover', (e) => {
+    const now = hotOf(e.target);
+    if (now && now !== hotOf(e.relatedTarget)) ring.classList.add('is-hot');
+  });
+  document.addEventListener('mouseout', (e) => {
+    const now = hotOf(e.target);
+    if (now && now !== hotOf(e.relatedTarget)) ring.classList.remove('is-hot');
+  });
+})();
