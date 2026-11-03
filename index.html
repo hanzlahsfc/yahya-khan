@@ -2,24 +2,22 @@
 <html lang="en">
 <head>
   <!--
-    ═══════════════════════════════════════════════════════════════
     YAHYA KHAN — AWARAGARD
-    Content checklist (search "TODO" before launch):
-      [ ] Hero photo        → replace assets/yahya-hero.jpg (B&W works best)
-      [ ] Follower counts   → hero stats + #reach platform cards
-      [ ] Social URLs       → nav, #reach cards, #contact, footer, JSON-LD
-      [ ] Brand names/links → #brands grid
-      [ ] WhatsApp number   → #contact
-      [ ] Domain            → canonical + og:url once picked (.pk/.me/.co)
-    ═══════════════════════════════════════════════════════════════
+    Still open before launch:
+      [ ] Domain → canonical, og:url, og:image, JSON-LD url/image, robots.txt, sitemap.xml
+      [ ] Confirm "Est. 2020"
+      [ ] WhatsApp, only if he sends a number (no element yet)
+      [ ] Brand roster. Fake brand names were removed on purpose.
+          Counts below are public figures from early Nov 2026, not a client sheet.
+          YouTube 325K and 43M views, Facebook ~780K, Instagram ~99K.
+          TikTok has no reliable public count, so the row shows the handle.
   -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yahya Khan — Awaragard | Pakistani Travel Creator</title>
-  <meta name="description" content="Yahya Khan is a Pakistani travel creator and storyteller. 2.3 million+ awaragards follow the journey across YouTube, Facebook, Instagram and TikTok.">
+  <meta name="description" content="Yahya Khan is a Pakistani travel creator. He films the long way by motorcycle, one numbered Story at a time, for the awaragards on YouTube, Facebook, Instagram and TikTok.">
   <link rel="canonical" href="https://yahyakhan.pk/">
 
-  <!-- Open Graph / knowledge-panel signals -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Yahya Khan — Awaragard">
   <meta property="og:description" content="Pakistani travel creator. Mera nam Yahya Khan hai — aur awaragardo ki duniya mai hum apko khushamdeed kehte hain.">
@@ -38,24 +36,25 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Person schema for Google entity / knowledge panel -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Yahya Khan",
     "alternateName": "Awaragard",
-    "description": "Pakistani travel creator and storyteller",
+    "description": "Pakistani travel creator and storyteller. Solo motorcycle films, numbered as Stories.",
     "url": "https://yahyakhan.pk/",
     "image": "https://yahyakhan.pk/assets/yahya-hero.jpg",
     "jobTitle": "Content Creator",
     "nationality": { "@type": "Country", "name": "Pakistan" },
     "knowsLanguage": ["ur", "en"],
     "sameAs": [
-      "https://www.youtube.com/@yahyakhan",
-      "https://www.facebook.com/yahyakhan",
-      "https://www.instagram.com/yahyakhan",
-      "https://www.tiktok.com/@yahyakhan"
+      "https://www.youtube.com/@yahyakhanfr",
+      "https://www.facebook.com/yahyakhanfr",
+      "https://www.instagram.com/yahyakhanfr",
+      "https://www.tiktok.com/@yahyakhanfr",
+      "https://www.threads.net/@yahyakhanfr",
+      "https://linktr.ee/yahyakhanfr"
     ]
   }
   </script>
@@ -64,7 +63,6 @@
 
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- ── Header ─────────────────────────────────────────────── -->
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="Yahya Khan — home">
       <span class="brand-mark">YK</span>
@@ -72,11 +70,12 @@
     </a>
     <nav class="site-nav" aria-label="Sections">
       <a href="#reach">Reach</a>
+      <a href="#stories">Stories</a>
       <a href="#story">Story</a>
-      <a href="#brands">Brands</a>
       <a href="#services">Work with me</a>
+      <a class="nav-book" href="#contact">Book Yahya</a>
     </nav>
-    <a class="cta" href="#contact">Book Yahya <span aria-hidden="true">↗</span></a>
+    <a class="cta" href="#contact"><span class="cta-full">Book Yahya</span><span class="cta-short">Book</span> <span aria-hidden="true">↗</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span>
     </button>
@@ -84,147 +83,146 @@
 
   <main id="main">
 
-    <!-- ── Hero ─────────────────────────────────────────────── -->
     <section class="hero">
-      <div class="hero-meta">
-        <p class="status"><span class="live-dot" aria-hidden="true"></span>Live from Pakistan <span class="urdu">پاکستان</span></p>
-        <p class="est">God first · Est. 2020 · still traveling</p>
-      </div>
+      <figure class="hero-photo">
+        <img src="assets/yahya-hero.jpg" alt="Yahya Khan" onerror="document.documentElement.classList.add('no-photo');this.remove()">
+      </figure>
 
-      <div class="hero-grid">
-        <div class="hero-type">
-          <p class="urdu urdu-hero">آوارہ گرد</p>
-          <h1>
-            <span class="solid">YAHYA</span>
-            <span class="outline">KHAN</span>
-          </h1>
-          <p class="catchphrase">
-            <span class="pre">And yes, he actually says it every time</span>
-            <em>“Mera nam Yahya Khan hai — aur awaragardo ki duniya mai hum apko khushamdeed kehte hain.”</em>
-            <span class="post">— welcome to the world of the wanderers</span>
-          </p>
-          <p class="bio">A camera, an open road, and a country most people only half-know. Yahya Khan films Pakistan the way it actually feels — the food, the mountains, the people, the chaos — and two and a half million awaragards ride along.</p>
+      <div class="hero-inner">
+        <div class="hero-meta">
+          <p class="status"><span class="live-dot" aria-hidden="true"></span>On the road <span class="urdu" lang="ur">پاکستان</span></p>
+          <p class="est">God first · Est. 2020 · still traveling</p>
+        </div>
+
+        <p class="urdu urdu-hero" lang="ur">آوارہ گرد</p>
+        <h1>
+          <span class="solid">Yahya</span>
+          <span class="outline">Khan</span>
+        </h1>
+
+        <p class="catchphrase">
+          <span class="pre">And yes, he actually says it every time</span>
+          <em>“Mera nam Yahya Khan hai, aur awaragardo ki duniya mai hum apko khushamdeed kehte hain.”</em>
+          <span class="post">Welcome to the world of the wanderers</span>
+        </p>
+
+        <div class="hero-foot">
+          <p class="bio">A motorcycle, a camera, and the long way around. Yahya Khan films it as a numbered Story, from the roads of Pakistan to a solo ride through South America.</p>
           <ul class="hero-stats">
-            <li><strong>2.3M+</strong><span>followers</span></li>
-            <li><strong>—</strong><span>brands partnered</span></li>
-            <li><strong>—</strong><span>cities filmed</span></li>
+            <li><strong>780K</strong><span>Facebook</span></li>
+            <li><strong>325K</strong><span>YouTube</span></li>
+            <li><strong>43M</strong><span>YouTube views</span></li>
           </ul>
         </div>
-        <figure class="hero-photo">
-          <!-- TODO: replace with real photo — black & white crop looks best -->
-          <img src="assets/yahya-hero.jpg" alt="Yahya Khan on the road" onerror="this.parentElement.classList.add('no-photo');this.remove()">
-        </figure>
       </div>
 
-      <a class="scroll-cue" href="#brands">Scroll to the work ↓</a>
+      <a class="scroll-cue" href="#reach">The platforms <span class="scroll-track" aria-hidden="true"><i></i></span></a>
     </section>
 
-    <!-- ── Marquee ──────────────────────────────────────────── -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Travel</span><span>Food &amp; Culture</span><span>Automobiles</span><span>Tourism</span><span>Lifestyle</span><span>Family Vlogs</span>
-        <span class="urdu">آوارہ گرد</span>
-        <span>2.3M+ followers</span><span>4 platforms</span><span>One journey</span>
+        <span>Motorcycles</span><span>Travel</span><span>Pakistan</span><span>South America</span><span>Story 205</span>
+        <span class="urdu" lang="ur">آوارہ گرد</span>
+        <span>43M views</span><span>One road</span>
       </div>
     </div>
 
-    <!-- ── 01 Reach ─────────────────────────────────────────── -->
     <section class="section" id="reach">
       <p class="section-no">01 Reach</p>
-      <h2>Millions of awaragards. <em>Four platforms. One road.</em></h2>
-      <p class="section-sub">Same camera, same accent, four different algorithms — and the room stays full on every one of them.</p>
+      <h2>The awaragards <em>are already in the room.</em></h2>
+      <p class="section-sub">Same rider, same opening line, four platforms. Counts are the public figures. TikTok’s number is not on the page until it can be checked.</p>
       <ul class="platforms">
-        <!-- TODO: real handles + counts -->
-        <li><a href="https://www.youtube.com/@yahyakhan" target="_blank" rel="noopener">
-          <span class="p-no">01</span><span class="p-name">YouTube</span><span class="p-count">— subscribers</span><span class="p-arrow">↗</span>
+        <li><a href="https://www.youtube.com/@yahyakhanfr" target="_blank" rel="noopener">
+          <span class="p-no">01</span><span class="p-name">YouTube</span><span class="p-count">325K subscribers</span><span class="p-arrow">↗</span>
         </a></li>
-        <li><a href="https://www.facebook.com/yahyakhan" target="_blank" rel="noopener">
-          <span class="p-no">02</span><span class="p-name">Facebook</span><span class="p-count">— followers</span><span class="p-arrow">↗</span>
+        <li><a href="https://www.facebook.com/yahyakhanfr" target="_blank" rel="noopener">
+          <span class="p-no">02</span><span class="p-name">Facebook</span><span class="p-count">780K followers</span><span class="p-arrow">↗</span>
         </a></li>
-        <li><a href="https://www.instagram.com/yahyakhan" target="_blank" rel="noopener">
-          <span class="p-no">03</span><span class="p-name">Instagram</span><span class="p-count">— followers</span><span class="p-arrow">↗</span>
+        <li><a href="https://www.instagram.com/yahyakhanfr" target="_blank" rel="noopener">
+          <span class="p-no">03</span><span class="p-name">Instagram</span><span class="p-count">99K followers</span><span class="p-arrow">↗</span>
         </a></li>
-        <li><a href="https://www.tiktok.com/@yahyakhan" target="_blank" rel="noopener">
-          <span class="p-no">04</span><span class="p-name">TikTok</span><span class="p-count">— followers</span><span class="p-arrow">↗</span>
+        <li><a href="https://www.tiktok.com/@yahyakhanfr" target="_blank" rel="noopener">
+          <span class="p-no">04</span><span class="p-name">TikTok</span><span class="p-count">@yahyakhanfr</span><span class="p-arrow">↗</span>
         </a></li>
       </ul>
     </section>
 
-    <!-- ── 02 Brands ────────────────────────────────────────── -->
-    <section class="section" id="brands">
-      <p class="section-no">02 Trusted by</p>
-      <h2>Brands that rode along. <em>A few you’ll know.</em></h2>
-      <p class="section-sub">Every collaboration opens the real campaign — not a logo wall.</p>
-      <!-- TODO: real brand names + campaign links -->
-      <ul class="brand-grid">
-        <li><a href="#" target="_blank" rel="noopener">Brand One</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Brand Two</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Brand Three</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Brand Four</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Brand Five</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Brand Six</a></li>
+    <section class="section" id="stories">
+      <p class="section-no">02 On film</p>
+      <h2>Stories from the road. <em>Each one opens the film.</em></h2>
+      <p class="section-sub">A few chapters from the numbered series. The brand roster stays off this page until each name has a real campaign behind it.</p>
+      <ul class="platforms films">
+        <li><a href="https://www.youtube.com/watch?v=HIjU3UzrOC4" target="_blank" rel="noopener">
+          <span class="p-no">205</span><span class="p-name">Bolivia’s strangest festival</span><span class="p-count">La Paz</span><span class="p-arrow">↗</span>
+        </a></li>
+        <li><a href="https://www.youtube.com/watch?v=bjQvHRprCiA" target="_blank" rel="noopener">
+          <span class="p-no">201</span><span class="p-name">Che Guevara was killed here</span><span class="p-count">Bolivia</span><span class="p-arrow">↗</span>
+        </a></li>
+        <li><a href="https://www.youtube.com/watch?v=IdLjFOSqnQA" target="_blank" rel="noopener">
+          <span class="p-no">160</span><span class="p-name">Pakistan to Brazil</span><span class="p-count">A new journey</span><span class="p-arrow">↗</span>
+        </a></li>
+        <li><a href="https://www.youtube.com/watch?v=YMO9Cg7s1_o" target="_blank" rel="noopener">
+          <span class="p-no">133</span><span class="p-name">Finally, Nanga Parbat</span><span class="p-count">Pakistan</span><span class="p-arrow">↗</span>
+        </a></li>
       </ul>
     </section>
 
-    <!-- ── 03 Story ─────────────────────────────────────────── -->
     <section class="section story" id="story">
       <p class="section-no">03 In his own words</p>
-      <h2>Why travel? <em>Because Pakistan is a story that never sits still.</em></h2>
+      <h2>Why travel? <em>Because the next road is the whole point.</em></h2>
       <div class="story-body">
-        <p>Most people see Pakistan through a screen and think they know it. Yahya Khan took the longer answer — pack the bike, start the camera, and let the country introduce itself. The roadside chai, the mountain cold, the stranger who insists you stay for dinner. That’s the footage.</p>
-        <p>He calls his people <strong>awaragards</strong> — wanderers. Not followers. People who’d rather be out there getting lost than sitting still. Every video is the same invitation he keeps making on camera:</p>
+        <p>Yahya Khan rides alone and films the long way. Every upload is a numbered Story. The early films are Pakistan: the passes, the valleys, Nanga Parbat. Story 160 is the one where he points the bike at South America, and the count is still climbing.</p>
+        <p>He calls the people who come along <strong>awaragards</strong>. Not an audience. People who would rather be out there than sitting still. Every film opens with the same invitation:</p>
         <blockquote>
-          <p class="urdu">میرا نام یحییٰ خان ہے اور آوارہ گردوں کی دنیا میں ہم آپ کو خوش آمدید کہتے ہیں</p>
+          <p class="urdu" lang="ur">میرا نام یحییٰ خان ہے اور آوارہ گردوں کی دنیا میں ہم آپ کو خوش آمدید کہتے ہیں</p>
           <cite>“Mera nam Yahya Khan hai, aur awaragardo ki duniya mai hum apko khushamdeed kehte hain.”</cite>
         </blockquote>
-        <p>The motive was never the views. It’s that a kid in Karachi should be able to see the north, taste Multan, and hear the sea at Gwadar — and think <em>I could go too.</em></p>
+        <p>The motive is that line. A place you have not stood in, filmed by someone who is actually standing there, with the dust still on the bike.</p>
       </div>
     </section>
 
-    <!-- ── 04 Services ──────────────────────────────────────── -->
     <section class="section" id="services">
       <p class="section-no">04 Work with him</p>
       <h2>What a brand <em>actually books.</em></h2>
-      <p class="section-sub">Most campaigns end up being two or three of these together.</p>
+      <p class="section-sub">The work is the journey. Most campaigns end up being two or three of these together.</p>
       <ul class="services">
-        <li><strong>Sponsored Travel Series</strong><span>Destination covered end to end — route, food, people — on the platforms where the awaragards already are.</span></li>
-        <li><strong>Brand Integration</strong><span>Your product inside the journey, not next to it. The kind of placement people don’t skip.</span></li>
-        <li><strong>Tourism Campaigns</strong><span>Boards, hotels and regions — shown by someone the audience trusts to tell the truth about a place.</span></li>
-        <li><strong>Event Appearance</strong><span>On stage, on the panel, or fronting the room in person.</span></li>
-        <li><strong>Short-form Reels</strong><span>Concept, shoot and cut — sixty seconds built for the feed.</span></li>
-        <li><strong>Long-term Ambassadorship</strong><span>Campaign fronting over a season, not a one-off post.</span></li>
+        <li><strong>Sponsored Travel Series</strong><span>A stretch of the road covered end to end, on the platforms where the awaragards already watch.</span></li>
+        <li><strong>Brand Integration</strong><span>The product inside the ride, not parked next to it. Placement people do not skip.</span></li>
+        <li><strong>Tourism Campaigns</strong><span>A region, a route, a stay, shown by someone the audience trusts to tell the truth about a place.</span></li>
+        <li><strong>Event Appearance</strong><span>On stage, on a panel, or fronting the room in person.</span></li>
+        <li><strong>Short-form Reels</strong><span>Concept, shoot and cut. Built for the feed, from the same road as the long films.</span></li>
+        <li><strong>Long-term Ambassadorship</strong><span>A season of the journey, not a one-off post.</span></li>
       </ul>
       <a class="cta cta-large" href="#contact">Talk about a campaign <span aria-hidden="true">↗</span></a>
     </section>
 
-    <!-- ── 05 Contact ───────────────────────────────────────── -->
     <section class="section contact" id="contact">
       <p class="section-no">05 Work together</p>
-      <h2>Got somewhere worth <em>taking two million people?</em></h2>
+      <h2>Got a road worth <em>putting him on?</em></h2>
       <p class="section-sub">Brand films, sponsored travel, tourism campaigns and long-term partnerships.</p>
       <div class="contact-links">
         <a class="contact-mail" href="mailto:yahyakhan.me@gmail.com">yahyakhan.me@gmail.com</a>
         <div class="contact-socials">
-          <a href="https://www.instagram.com/yahyakhan" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.tiktok.com/@yahyakhan" target="_blank" rel="noopener">TikTok</a>
-          <a href="https://www.youtube.com/@yahyakhan" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.facebook.com/yahyakhan" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/yahyakhanfr" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@yahyakhanfr" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.youtube.com/@yahyakhanfr" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.facebook.com/yahyakhanfr" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.threads.net/@yahyakhanfr" target="_blank" rel="noopener">Threads</a>
         </div>
       </div>
-      <p class="sign-off"><span class="urdu">آوارہ گرد</span> <em>“Awaragard.”</em> God first. Camera second. Everything else follows.</p>
+      <p class="sign-off"><span class="urdu" lang="ur">آوارہ گرد</span> <em>“Awaragard.”</em> God first. Camera second. Everything else follows.</p>
     </section>
 
   </main>
 
-  <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="footer-top">
       <p class="footer-brand">Yahya Khan</p>
-      <p class="footer-desc">Travel creator &amp; storyteller — filming Pakistan for two and a half million awaragards.</p>
+      <p class="footer-desc">Travel creator and storyteller. Solo motorcycle, one Story at a time.</p>
     </div>
     <div class="footer-bottom">
       <p>© <span id="year">2026</span> Yahya Khan. All rights reserved.</p>
-      <p class="urdu">خدا حافظ — until the next road</p>
+      <p class="urdu" lang="ur">خدا حافظ — until the next road</p>
     </div>
   </footer>
 
