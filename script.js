@@ -1,30 +1,28 @@
 // Yahya Khan — Awaragard
 
-// One set in the HTML. Doubling here is what makes -50% loop.
-const track = document.querySelector('.marquee-track');
-if (track && !track.dataset.looped) {
-  track.innerHTML += track.innerHTML;
-  track.dataset.looped = 'true';
-}
-
 // Reveal-on-scroll. No-JS stays visible, because .reveal is added here.
-const reveals = document.querySelectorAll('.section, .hero-foot, .catchphrase, .hero h1');
+const reveals = document.querySelectorAll('.section');
 reveals.forEach((el) => el.classList.add('reveal'));
+function show(el) { el.classList.add('in'); }
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
-          e.target.classList.add('in');
+          show(e.target);
           io.unobserve(e.target);
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.08 }
   );
-  reveals.forEach((el) => io.observe(el));
+  reveals.forEach((el) => {
+    io.observe(el);
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) show(el);
+  });
 } else {
-  reveals.forEach((el) => el.classList.add('in'));
+  reveals.forEach(show);
 }
 
 // Mobile nav
