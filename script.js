@@ -71,6 +71,14 @@ if ('IntersectionObserver' in window && watched.length) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+const header = document.querySelector('.site-header');
+function paintHeader() {
+  if (!header) return;
+  header.classList.toggle('is-solid', window.scrollY > 12);
+}
+paintHeader();
+window.addEventListener('scroll', paintHeader, { passive: true });
+
 // Pointer overlay. The dot snaps to the pointer. The ring trails it
 // and grows on links and buttons. Off for touch and reduced motion.
 (function () {
